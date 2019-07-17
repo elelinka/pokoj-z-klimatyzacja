@@ -14,7 +14,7 @@ public class Room {
 
     public boolean descendingTemp() {
         if(isAirConditioner == true && maxTemp() == false) {
-            System.out.println(--currentTemp);
+            --currentTemp;
             return true;
         } else {
             return false;
