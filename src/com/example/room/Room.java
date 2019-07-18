@@ -5,6 +5,7 @@ public class Room {
     private double area;
     private double currentTemp;
     private boolean isAirConditioner;
+    private final int minTemp = 18;
 
     public Room(double area, double currentTemp, boolean isAirConditioner) {
         this.area = area;
@@ -13,16 +14,13 @@ public class Room {
     }
 
     public boolean descendingTemp() {
-        if(isAirConditioner && !maxTemp()) {
+        if (isAirConditioner && currentTemp > minTemp) {
             --currentTemp;
             return true;
         } else {
+            currentTemp = minTemp;
             return false;
         }
-    }
-
-    public boolean maxTemp() {
-        return currentTemp == 18;
     }
 
     public String show() {
