@@ -13,7 +13,7 @@ public class Room {
     }
 
     public boolean descendingTemp() {
-        if(isAirConditioner == true && maxTemp() == false) {
+        if(isAirConditioner && !maxTemp()) {
             --currentTemp;
             return true;
         } else {
@@ -22,7 +22,7 @@ public class Room {
     }
 
     public boolean maxTemp() {
-        return currentTemp == 18 ? true : false;
+        return currentTemp == 18;
     }
 
     public String show() {
